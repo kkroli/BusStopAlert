@@ -1,0 +1,208 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/block"
+        android:layout_alignParentTop="true"
+        android:height="600px"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btn_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_btn_find"
+        android:layout_alignParentRight="true" />
+
+    <EditText
+        android:id="@+id/et_location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/hnt_et_location"
+        android:layout_toLeftOf="@id/btn_find" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myLocationView"
+        android:layout_below="@id/btn_find"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/mylocationbutton"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        />
+
+   <RelativeLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:id="@+id/AddressInfo"
+       android:visibility="invisible"
+       android:background="#ffffffff">
+
+       <RelativeLayout
+           android:orientation="vertical"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textAppearance="?android:attr/textAppearanceMedium"
+               android:text="Address Line 1"
+               android:id="@+id/addressLine1" />
+
+           <TextView
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text="addresse line 2"
+               android:id="@+id/addressLine2"
+               android:layout_below="@id/addressLine1"
+               android:layout_marginBottom="3dp"
+               android:textIsSelectable="false" />
+
+       </RelativeLayout>
+
+       <RelativeLayout
+           android:orientation="vertical"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Routes"
+               android:id="@+id/getRoutes"
+               android:layout_alignParentRight="true"
+               android:gravity="center_vertical"
+               android:textSize="15dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginRight="15dp" />
+
+       </RelativeLayout>
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/transitDetails"
+        android:visibility="invisible"
+        android:background="#ffffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Departure-Arrival Time"
+            android:textColor="#000000"
+            android:id="@+id/timesingle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration"
+            android:textColor="#000000"
+            android:id="@+id/durationsingle"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="route"
+            android:id="@+id/routesingle"
+            android:layout_below="@id/timesingle"
+            android:layout_marginBottom="3dp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:textIsSelectable="false" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/listPanel"
+        android:visibility="invisible"
+        android:background="#ffffffff"
+        android:layout_below="@+id/AddressInfo">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/defaultlocation">
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/timepanel1"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Time"
+                    android:id="@+id/time1"
+                    android:gravity="center_vertical"
+                    android:textColor="#000000"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="15dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/LocationPanel1"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/timepanel1">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:id="@+id/location1"
+                    android:textSize="25dp"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/directions"
+            android:visibility="invisible"
+            android:background="#ffffff"
+            android:layout_below="@id/defaultlocation"
+            android:layout_gravity="center_horizontal"/>
+
+        </RelativeLayout>
+
+</RelativeLayout>
