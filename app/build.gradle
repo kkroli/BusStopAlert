@@ -22,7 +22,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             def newApkName
-            newApkName = "GeofenceExample.apk";
+            newApkName = "BusStopAlert.apk";
             output.outputFile = new File("${project.rootDir}", newApkName);
         }
     }
